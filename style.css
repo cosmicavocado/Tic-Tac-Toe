@@ -1,0 +1,28 @@
+body {
+    background-color: #000000;
+    color: #ffffff;
+    margin: 0;
+}
+h1 {
+    font-size: 4rem;
+    text-align: center;
+    margin: 4vh auto;
+}
+#grid {
+    display: grid;
+    grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+    margin: 20vh auto;
+    width: max-content;
+    height: max-content;
+    outline: 0.313rem solid #3498DB;
+}
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 6.25rem;
+    height: 6.25rem;
+    overflow: hidden;
+    outline: 0.313rem solid #ffffff;
+    font-size: 2.5em;
+}
