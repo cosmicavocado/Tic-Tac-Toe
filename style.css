@@ -14,7 +14,7 @@ h1 {
     margin: 20vh auto;
     width: max-content;
     height: max-content;
-    outline: 0.313rem solid #3498DB;
+    outline: 0.616rem solid #3498DB;
 }
 .box {
     display: flex;
@@ -24,5 +24,5 @@ h1 {
     height: 6.25rem;
     overflow: hidden;
     outline: 0.313rem solid #ffffff;
-    font-size: 2.5em;
+    font-size: 2.5rem;
 }
