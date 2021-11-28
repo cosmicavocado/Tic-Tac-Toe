@@ -11,7 +11,7 @@ h1 {
 #grid {
     display: grid;
     grid-template: repeat(3, 1fr) / repeat(3, 1fr);
-    margin: 20vh auto;
+    margin: 2rem auto;
     width: max-content;
     height: max-content;
     outline: 0.616rem solid #3498DB;
@@ -25,4 +25,15 @@ h1 {
     overflow: hidden;
     outline: 0.313rem solid #3498DB;
     font-size: 2.5rem;
+}
+#reset {
+    display: flex;
+    justify-content: center;
+}
+button {
+    background-color: #000000;
+    color: #ffffff;
+    font-size: 1.5rem;
+    margin: 2rem auto;
+    outline: 0.313rem solid #3498DB;
 }
