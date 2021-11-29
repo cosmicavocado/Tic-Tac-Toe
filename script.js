@@ -1,32 +1,10 @@
-// Global variables
+// Global Variables
 const boxes = document.querySelectorAll('.box');
 let validTurns = 0;
 const gameText = document.querySelector('#currentText');
 
-// Main Game Loop
-const runGame = () => {
-    for (let i=0; i<boxes.length; i++) {
-        boxes[i].addEventListener('click', (e) => {
-            e.preventDefault();
-            let currentBox = e.target;
-            validTurns++;
-            if (currentBox.innerText === '') {
-                if (validTurns % 2 !== 0) {
-                    currentBox.innerText = 'X';
-                    gameText.innerText = 'Player O\'s turn';
-                } else {
-                    currentBox.innerText = 'O';
-                    gameText.innerText = 'Player X\'s turn';
-                }
-                checkWin();
-                checkTie();
-            }
-        })
-    }
-}
-
-// Reset Game after delay
-const clearBoard = () => {
+// Reset Game After Delay
+const resetGame = () => {
     for (let i=0; i<boxes.length; i++) {
         boxes[i].innerText = '';
     }
@@ -35,9 +13,9 @@ const clearBoard = () => {
 }
 
 // Reset on Button Press
-document.querySelector('button').addEventListener('click', clearBoard);
+document.querySelector('button').addEventListener('click', resetGame);
 
-// Check win
+// Check Win
 const checkWin = () => {
     const winConditions = [
         // horizontal
@@ -61,7 +39,7 @@ const checkWin = () => {
         let matchesO = markers.filter(marker => marker === 'O' && marker !== '');
         if (matchesX.length === 3 || matchesO.length === 3) {
             gameText.innerText = `Player ${markers[0]} wins! Resetting board...`;
-            setTimeout(() => {clearBoard()}, 5000);
+            setTimeout(() => {resetGame()}, 5000);
         }
     })
 }
@@ -70,7 +48,29 @@ const checkWin = () => {
 const checkTie = () => {
     if (validTurns === 9) {
         gameText.innerText = 'Tie! Resetting board...';
-        setTimeout(() => {clearBoard()}, 5000);
+        setTimeout(() => {resetGame()}, 5000);
+    }
+}
+
+// Main Game Loop
+const runGame = () => {
+    for (let i=0; i<boxes.length; i++) {
+        boxes[i].addEventListener('click', (e) => {
+            e.preventDefault();
+            let currentBox = e.target;
+            validTurns++;
+            if (currentBox.innerText === '') {
+                if (validTurns % 2 !== 0) {
+                    currentBox.innerText = 'X';
+                    gameText.innerText = 'Player O\'s turn';
+                } else {
+                    currentBox.innerText = 'O';
+                    gameText.innerText = 'Player X\'s turn';
+                }
+                checkWin();
+                checkTie();
+            }
+        })
     }
 }
 
