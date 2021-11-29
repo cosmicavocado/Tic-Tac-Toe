@@ -1,11 +1,12 @@
 const boxes = document.querySelectorAll('.box');
-let validTurns = 1;
+let validTurns = 0;
 
 const runGame = () => {
     for (let i=0; i<boxes.length; i++) {
         boxes[i].addEventListener('click', (e) => {
             e.preventDefault();
             let currentBox = e.target;
+            validTurns++;
             if (currentBox.innerText === '') {
                 if (validTurns % 2 !== 0) {
                     currentBox.innerText = 'X';
@@ -13,7 +14,7 @@ const runGame = () => {
                     currentBox.innerText = 'O';
                 }
                 checkWin();
-                validTurns++;
+                checkTie();
             }
         })
     }
@@ -23,8 +24,11 @@ const clearBoard = () => {
     for (let i=0; i<boxes.length; i++) {
         boxes[i].innerText = '';
     }
-    validTurns = 1;
+    validTurns = 0;
 }
+
+// Listen for Reset
+document.querySelector('button').addEventListener('click', clearBoard);
 
 // check win
 const checkWin = () => {
@@ -54,9 +58,13 @@ const checkWin = () => {
         }
     })
 }
-
-// Listen for Reset
-document.querySelector('button').addEventListener('click', clearBoard);
+// Check for tie
+const checkTie = () => {
+    if (validTurns === 9) {
+        console.log('Tie!');
+        clearBoard();
+    }
+}
 
 // Run Game
 runGame();
