@@ -28,7 +28,7 @@ const checkWin = () => {
         [2, 5, 8],
         // diagonal
         [0, 4, 8],
-        [2, 4, 6],
+        [2, 4, 6]
     ]
     winConditions.forEach(condition => {
         let markers = [];
@@ -39,7 +39,7 @@ const checkWin = () => {
         let matchesO = markers.filter(marker => marker === 'O' && marker !== '');
         if (matchesX.length === 3 || matchesO.length === 3) {
             gameText.innerText = `Player ${markers[0]} wins! Resetting board...`;
-            setTimeout(() => {resetGame()}, 5000);
+            setTimeout(() => {resetGame()}, 3000);
         }
     })
 }
@@ -48,7 +48,7 @@ const checkWin = () => {
 const checkTie = () => {
     if (validTurns === 9) {
         gameText.innerText = 'Tie! Resetting board...';
-        setTimeout(() => {resetGame()}, 5000);
+        setTimeout(() => {resetGame()}, 3000);
     }
 }
 
