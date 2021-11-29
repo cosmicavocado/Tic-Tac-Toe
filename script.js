@@ -1,6 +1,8 @@
+// Global variables
 const boxes = document.querySelectorAll('.box');
 let validTurns = 0;
 
+// Main Game Loop
 const runGame = () => {
     for (let i=0; i<boxes.length; i++) {
         boxes[i].addEventListener('click', (e) => {
@@ -20,6 +22,7 @@ const runGame = () => {
     }
 }
 
+// Reset Game
 const clearBoard = () => {
     for (let i=0; i<boxes.length; i++) {
         boxes[i].innerText = '';
@@ -27,10 +30,10 @@ const clearBoard = () => {
     validTurns = 0;
 }
 
-// Listen for Reset
+// Reset on Button Press
 document.querySelector('button').addEventListener('click', clearBoard);
 
-// check win
+// Check win
 const checkWin = () => {
     const winConditions = [
         // horizontal
@@ -58,6 +61,7 @@ const checkWin = () => {
         }
     })
 }
+
 // Check for tie
 const checkTie = () => {
     if (validTurns === 9) {
