@@ -1,18 +1,12 @@
 const boxes = document.querySelectorAll('.box');
 let validTurns = 1;
 
-const clearBoard = () => {
-    for (let i=0; i<boxes.length; i++) {
-        boxes[i].innerText = '';
-    }
-}
-
-const listenToBoxes = () => {
+const runGame = () => {
     for (let i=0; i<boxes.length; i++) {
         boxes[i].addEventListener('click', (e) => {
             e.preventDefault();
             let currentBox = e.target;
-            if (currentBox.innerText !== 'X' && currentBox.innerText !== 'O') {
+            if (currentBox.innerText === '') {
                 if (validTurns % 2 !== 0) {
                     currentBox.innerText = 'X';
                 } else {
@@ -23,6 +17,13 @@ const listenToBoxes = () => {
             }
         })
     }
+}
+
+const clearBoard = () => {
+    for (let i=0; i<boxes.length; i++) {
+        boxes[i].innerText = '';
+    }
+    validTurns = 1;
 }
 
 // check win
@@ -55,16 +56,7 @@ const checkWin = () => {
 }
 
 // Listen for Reset
-document.querySelector('button').addEventListener('click', () => {
-    clearBoard();
-    validTurns = 1;
-})
-
-// Game Loop
-const runGame = () => {
-    clearBoard();
-    listenToBoxes();
-}
+document.querySelector('button').addEventListener('click', clearBoard);
 
 // Run Game
 runGame();
