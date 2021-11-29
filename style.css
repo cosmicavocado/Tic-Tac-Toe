@@ -4,7 +4,7 @@ body {
     margin: 0;
 }
 h1 {
-    font-size: 4rem;
+    font-size: 3.5rem;
     text-align: center;
     margin: 4vh auto;
 }
@@ -26,14 +26,17 @@ h1 {
     outline: 0.313rem solid #3498DB;
     font-size: 2.5rem;
 }
-#reset {
+#reset, #gameText {
     display: flex;
     justify-content: center;
 }
 button {
     background-color: #000000;
     color: #ffffff;
-    font-size: 1.5rem;
+    font-size: 1rem;
     margin: 2rem auto;
     outline: 0.313rem solid #3498DB;
+}
+#currentText {
+    font-size: 1.5rem;
 }
