@@ -15,8 +15,9 @@ const resetGame = () => {
 // Reset on Button Press
 document.querySelector('button').addEventListener('click', resetGame);
 
-// Check Win
+// Check Win, Then Check Tie
 const checkWin = () => {
+    let isTie = true;
     const winConditions = [
         // horizontal
         [0, 1, 2],
@@ -40,13 +41,16 @@ const checkWin = () => {
         if (matchesX.length === 3 || matchesO.length === 3) {
             gameText.innerText = `Player ${markers[0]} wins! Resetting board...`;
             setTimeout(() => {resetGame()}, 3000);
+            isTie = false;
         }
     })
+    checkTie(isTie);
 }
 
-// Check for tie
-const checkTie = () => {
-    if (validTurns === 9) {
+// Check Tie
+const checkTie = (isTie) => {
+    if (validTurns === 9 && isTie === true) {
+        console.log('condition checked');
         gameText.innerText = 'Tie! Resetting board...';
         setTimeout(() => {resetGame()}, 3000);
     }
@@ -68,7 +72,6 @@ const runGame = () => {
                     gameText.innerText = 'Player X\'s turn';
                 }
                 checkWin();
-                checkTie();
             }
         })
     }

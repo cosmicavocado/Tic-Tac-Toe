@@ -1,12 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Press+Start+2P&display=swap');
 body {
     background-color: #000000;
     color: #ffffff;
+    font-family: 'Open Sans', sans-serif;
     margin: 0;
 }
 h1 {
+    background-color: #313b4d;
+    font-family: 'Press Start 2P', cursive;
     font-size: 3.5rem;
     text-align: center;
-    margin: 4vh auto;
+    margin: 0 auto;
+    padding: 2rem 0;
 }
 #grid {
     display: grid;
@@ -14,16 +19,17 @@ h1 {
     margin: 2rem auto;
     width: max-content;
     height: max-content;
-    outline: 0.616rem solid #3498DB;
+    outline: 0.616rem solid #63b8ff;
 }
 .box {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #313b4d;
     width: 6.25rem;
     height: 6.25rem;
     overflow: hidden;
-    outline: 0.313rem solid #3498DB;
+    outline: 0.313rem solid #63b8ff;
     font-size: 2.5rem;
 }
 #reset, #gameText {
@@ -31,12 +37,23 @@ h1 {
     justify-content: center;
 }
 button {
-    background-color: #000000;
+    background-color: #313b4d;
     color: #ffffff;
     font-size: 1rem;
     margin: 2rem auto;
-    outline: 0.313rem solid #3498DB;
+    outline: 0.313rem solid #63b8ff;
+}
+button:hover {
+    background-color: #63b8ff;
+    outline: 0.313rem solid #e4e5f1;
 }
 #currentText {
     font-size: 1.5rem;
 }
+/*
+https://www.color-hex.com/color-palette/97670 
+
+Alt scheme?
+https://www.color-hex.com/color-palette/106746
+
+*/
