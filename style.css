@@ -21,9 +21,11 @@ h1 {
     height: max-content;
     outline: 0.616rem solid #63b8ff;
 }
-.box {
+.box, #reset, #gameText {
     display: flex;
     justify-content: center;
+}
+.box {
     align-items: center;
     background-color: #313b4d;
     width: 6.25rem;
@@ -32,28 +34,17 @@ h1 {
     outline: 0.313rem solid #63b8ff;
     font-size: 2.5rem;
 }
-#reset, #gameText {
-    display: flex;
-    justify-content: center;
-}
 button {
     background-color: #313b4d;
     color: #ffffff;
     font-size: 1rem;
-    margin: 2rem auto;
+    margin: 3rem auto 1rem auto;
     outline: 0.313rem solid #63b8ff;
 }
 button:hover {
-    background-color: #63b8ff;
-    outline: 0.313rem solid #e4e5f1;
+    background-color:#777a92;
+    outline: 0.313rem solid #99ccff;
 }
 #currentText {
     font-size: 1.5rem;
 }
-/*
-https://www.color-hex.com/color-palette/97670 
-
-Alt scheme?
-https://www.color-hex.com/color-palette/106746
-
-*/
