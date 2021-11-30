@@ -13,7 +13,6 @@ const resetGame = () => {
 const listenReset = () => {
     const resetBtn = document.querySelector('button');
     resetBtn.addEventListener('click', resetGame);
-    console.log('clicked');
 }
 
 const isGameOver = () => {
