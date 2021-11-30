@@ -1,9 +1,11 @@
 const boxes = document.querySelectorAll('.box');
 let validMoves = 0;
+let end = false;
 const gameText = document.querySelector('#currentText');
 
 const resetGame = () => {
-    boxes.forEach(box => {box.innerText = ''});
+    boxes.forEach(box => {box.innerText = '';})
+    end = false;
     validMoves = 0;
     gameText.innerText = 'Player X\'s turn';
 }
@@ -57,10 +59,7 @@ const checkTie = (gameOver) => {
     }
 }
 
-
-
 const runGame = () => {
-    let end = false;
     boxes.forEach(box => {
         box.addEventListener('click', (e) => {
             e.preventDefault();
