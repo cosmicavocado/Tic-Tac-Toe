@@ -40,38 +40,35 @@ This project is a simple front-end tic-tac-toe game that allows two players on t
 
 # Demo Outline
 
-* Shown current player's turn message
-    * Valid moves alternate between 'X' and 'O'
-* Can't click same square twice
-* Solve for winner
+* Shows current player's turn message
+    * Valid clicks alternate between 'X' and 'O'
+    * Can't click same square twice
+* Solves for winner
     * Shown message on win
-* Check for tie
+* Checks for tie
     * Shown message on tie
-* Won't allow user to keep clicking after game over (will auto reset 2.5 seconds)
+* Won't allow user to play or reset after game over (will auto reset 2.5 seconds)
 * User can reset game if they like
-    * Except if game is already over because of auto wipe
+    * Except if game is already over
+        * Otherwise the auto reset could wipe new clicks
 
 # Approach
 
 ## How I solved for the winner
 
-* Created a 2D array where each inner array holds the indices of a possible win condition
-* For each win condition and for each index I looped the grid boxes node list while pushing the box contents into a temporary array (markers)
-    * Reduced markers array to count the instances of each possible result ('X', 'O', '')
-* If reduced array 'X' or reduced array 'O' has length === length of a win condition
-    * Game end is true
-* If game has not ended
+* Used a 2D array containing win conditions to loop the grid boxes storing the contents in a temporary array
+* Then I reduced the markers array into an array called matches to count instances of ‘X’, ‘O’, and empty string
+* If matches ‘X’ or ‘O’ = the length of a win condition
+    * Game is over
+* If game still isn’t over
     * Check for tie
-* Return boolean result to trigger end of game or continue
+
 
 ## Hurdles
 
 * Wanted to optimize code more than I did even though time was not abundant
-* Spent a lot of time researching documentation and markup
-    * Underestimated the time README would take to complete
-* Struggled with breaking down my project in a way that other people can understand for a presentation
-    * Habit of mixing code into pseudocode
-    * Never made a README before
+* Underestimated the time README would take to complete
+* Struggled with breaking down my project in a way that other people can understand
 
 # Takeaways
 
@@ -79,15 +76,14 @@ This project is a simple front-end tic-tac-toe game that allows two players on t
 
 * Make a message text function so that gameText.innerText isn't as repetitive
 * Add a separate function for tracking player turns instead of having that feature built into the main game loop
-* Use a 2D array to track and update the board-state with every valid move
 
 ## What I learned
 
-* Markdown formatting/ README
+* Markdown formatting / README writing
 * (Re)learned how to reduce arrays to count objects thanks to Usman's vote count example and MDN docs
 
 ## What would I do next
 
-* Add sound effects
+* Add sound effects for grid clicks, reset click, and game win or tie
 * Add ability for players to choose their markers and substitute their choice for X and Y respectively
 * Add a game theme so that it's less generic

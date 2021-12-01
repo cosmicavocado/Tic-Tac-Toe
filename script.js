@@ -147,7 +147,7 @@ const isGameOver = () => {
   *     current box is target box
   *     IF current box is a valid target and game is not over
   *     increment valid moves
-  *        IF valid moves is odd
+  *         IF valid moves is odd
   *             current box text is 'X'
   *             update game text for player O's turn
   *         ELSE
