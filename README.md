@@ -58,7 +58,7 @@ This project is a simple front-end tic-tac-toe game that allows two players on t
 * Created a 2D array where each inner array holds the indices of a possible win condition
 * For each win condition and for each index I looped the grid boxes node list while pushing the box contents into a temporary array (markers)
     * Reduced markers array to count the instances of each possible result ('X', 'O', '')
-* If reduced array 'X' or reduced array 'O' has length === length of win condition
+* If reduced array 'X' or reduced array 'O' has length === length of a win condition
     * Game end is true
 * If game has not ended
     * Check for tie
