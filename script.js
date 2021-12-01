@@ -59,7 +59,7 @@
   *     FOREACH index within conditions
   *         push marker into markers array
   *     reduce marker array to get count of idividual markers
-  *     IF reduced array 'X' === 3 or reduced array 'O' === 3
+  *     IF length of reduced array 'X' or 'O' === length of a win condition
   *         flag endGame as true
   *         update game text
   *         reset game after timeout
@@ -140,7 +140,7 @@ const isGameOver = () => {
   * - Updates game text and game board accordingly
   * - Breaks loop when game is over
   * 
-  * ## LOGIC
+  * # LOGIC
   * listen for reset button press
   * FOREACH box listen for click
   *     prevent page reload
