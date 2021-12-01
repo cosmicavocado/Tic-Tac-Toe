@@ -31,6 +31,8 @@
  /**
   * # PURPOSE
   * Run resetGame() when the user clicks resetBtn
+  * _except_ when game is over to avoid the auto wipe
+  * from wiping the new game
   * 
   * # LOGIC
   * select reset button from DOM
@@ -53,10 +55,10 @@
   * 
   * # LOGIC
   * FOREACH condition in winCondtions
-  *     Create empty array (markers) to store results
+  *     create empty array (markers) to store results
   *     FOREACH index within conditions
-  *         Push marker into markers array
-  *     Reduce marker array to get count of idividual markers
+  *         push marker into markers array
+  *     reduce marker array to get count of idividual markers
   *     IF reduced array 'X' === 3 or reduced array 'O' === 3
   *         flag endGame as true
   *         update game text
@@ -108,7 +110,7 @@ const isGameOver = () => {
 
  /**
   * # PURPOSE
-  * Takes boolean gameOver and returns true or false
+  * Takes boolean endGame and returns true or false
   * 
   * # LOGIC
   * IF valid moves are expended & the game has not been won
@@ -133,7 +135,10 @@ const isGameOver = () => {
  
  /**
   * # PURPOSE
-  * Contains game logic
+  * Core game loop
+  * - Listens for clicks on reset button and grid
+  * - Updates game text and game board accordingly
+  * - Breaks loop when game is over
   * 
   * ## LOGIC
   * listen for reset button press
