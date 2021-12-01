@@ -18,8 +18,8 @@
   * # LOGIC
   * FOREACH box in boxes
   *     clear text in boxes
-  *     reset endGame flag to false
-  *     gameText reset
+  *     reset end game flag to false
+  *     game text reset
   */
  const resetGame = () => {
      boxes.forEach(box => {box.innerText = '';})
@@ -31,7 +31,7 @@
  /**
   * # PURPOSE
   * Run resetGame() when the user clicks resetBtn
-  * _except_ when game is over to avoid the auto wipe
+  * _except_ when game is over to avoid auto wipe
   * from wiping the new game
   * 
   * # LOGIC
@@ -110,7 +110,7 @@ const isGameOver = () => {
 
  /**
   * # PURPOSE
-  * Takes boolean endGame and returns true or false
+  * Checks for valid moves and returns true or false for tie game
   * 
   * # LOGIC
   * IF valid moves are expended & the game has not been won
@@ -120,7 +120,6 @@ const isGameOver = () => {
   * ELSE tie
   *     result is false
   * 
-  * @param {boolean} endGame
   * @returns boolean value (true or false)
   */
  const checkTie = () => {
@@ -138,7 +137,7 @@ const isGameOver = () => {
   * Core game loop
   * - Listens for clicks on reset button and grid
   * - Updates game text and game board accordingly
-  * - Breaks loop when game is over
+  * - Breaks from loop when game is over
   * 
   * # LOGIC
   * listen for reset button press
