@@ -25,21 +25,23 @@ h1 {
     display: flex;
     justify-content: center;
 }
+.box, button {
+    outline: 0.313rem solid #63b8ff;
+}
 .box {
     align-items: center;
     background-color: #313b4d;
     width: 6.25rem;
     height: 6.25rem;
     overflow: hidden;
-    outline: 0.313rem solid #63b8ff;
+    
     font-size: 2.5rem;
 }
 button {
     background-color: #313b4d;
-    color: #ffffff;
+    color: inherit;
     font-size: 1rem;
     margin: 3rem auto 1rem auto;
-    outline: 0.313rem solid #63b8ff;
 }
 button:hover {
     background-color:#777a92;
